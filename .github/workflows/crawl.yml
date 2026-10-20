@@ -1,0 +1,28 @@
+name: Crawl des trails
+on:
+  schedule:
+    - cron: "0 2 * * *"   # chaque nuit : rafraîchit les fiches déjà connues
+    - cron: "0 3 * * 1"   # chaque lundi : découvre de nouveaux trails par département
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python scripts/crawl.py
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          DISCOVER: ${{ (github.event.schedule == '0 3 * * 1' || github.event_name == 'workflow_dispatch') && '1' || '0' }}
+          MAX_EVENTS: "150"
+      - run: |
+          git config user.name "trailendar-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add trails.json crawl-report.json
+          git diff --cached --quiet || (git commit -m "Mise à jour des données" && git push)
