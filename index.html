@@ -18,8 +18,11 @@ header{display:flex;align-items:center;gap:24px;padding:12px 20px;border-bottom:
 .qk{display:flex;gap:12px;flex-wrap:wrap;padding:20px;border-bottom:1px solid var(--bd)}
 .qk button{font:inherit;border:0;background:var(--ch);color:var(--tx);padding:11px 18px;border-radius:999px;cursor:pointer}
 .qk button[aria-pressed=true]{background:var(--on);color:var(--onx)}
-.lay{display:grid;grid-template-columns:270px minmax(0,1fr);gap:36px;padding:28px 20px 40px;max-width:1300px;margin:0 auto}
+.lay{display:grid;grid-template-columns:270px minmax(0,1fr);gap:36px;padding:28px 20px 40px;max-width:1300px;margin:0 auto;align-items:start}
+aside{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;overscroll-behavior:contain}
 aside h2{font-size:17px;font-weight:500;margin:0 0 20px}
+.mbar,.sf,#sx{display:none}
+html.lock{overflow:hidden}
 .vw{display:grid;grid-template-columns:repeat(3,1fr);background:var(--ch);border-radius:8px;padding:4px;margin-bottom:22px}
 .vw button{font:inherit;font-size:14px;background:none;border:0;padding:8px 4px;border-radius:6px;color:var(--tx);cursor:pointer}
 .vw button[aria-pressed=true]{background:var(--bg);box-shadow:0 0 0 1px var(--bd)}
@@ -34,15 +37,14 @@ label.ck{display:flex;gap:10px;align-items:center;cursor:pointer;margin:8px 0}
 .rs{background:none;border:0;color:var(--mu);text-decoration:underline;font:inherit;cursor:pointer;padding:0}
 .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:18px}
 .top h1{font-size:24px;font-weight:500;margin:0}.top span{color:var(--mu);font-size:14px;white-space:nowrap}
-.mb{background:var(--cd);border-radius:10px;padding:20px;margin-bottom:20px;display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:24px;align-items:center}
+.mb{position:relative;background:var(--cd);border-radius:10px;padding:48px 20px 20px;margin-bottom:20px}.mb[hidden]{display:none}
+.mp{max-width:520px;margin:0 auto}
+.xb{position:absolute;top:12px;right:12px;font:inherit;font-size:13px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:999px;padding:5px 12px;cursor:pointer}
 .mp svg{width:100%;height:auto;display:block}
 .mp path{fill:var(--ch);stroke:var(--bg);stroke-width:.7;cursor:pointer;outline:none}
 .mp path.f{fill:#FF8A1F}
 .mp path:hover,.mp path:focus-visible{stroke:var(--tx);stroke-width:1.8}
 .mp path.s{stroke:var(--tx);stroke-width:2.6}
-.mi h3{margin:0 0 6px;font-size:18px}.mi p{margin:6px 0;color:var(--mu);font-size:14px}
-.lgd{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mu);margin-top:12px}
-.lgd i{display:inline-block;width:90px;height:10px;border-radius:5px;background:linear-gradient(90deg,#FF8A1F66,#FF8A1F)}
 .gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
 .card{background:var(--cd);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:12px}
 .card h3{margin:0;font-size:22px;font-weight:600;letter-spacing:-.01em}
@@ -61,7 +63,29 @@ label.ck{display:flex;gap:10px;align-items:center;cursor:pointer;margin:8px 0}
 .list .card{display:grid;grid-template-columns:110px minmax(0,1fr);column-gap:24px;row-gap:8px}
 .list .lg{grid-row:1/6;height:100px}
 .em{background:var(--cd);border-radius:10px;padding:24px;color:var(--mu)}
-@media(max-width:820px){.lay{grid-template-columns:1fr}.mb{grid-template-columns:1fr}header{flex-wrap:wrap;gap:10px}#logo{height:38px}.sr{order:3;flex-basis:100%;max-width:none}}
+@media(max-width:820px){
+header{flex-wrap:wrap;gap:10px;padding:10px 16px}#logo{height:38px}.sr{order:3;flex-basis:100%;max-width:none}
+.qk{flex-wrap:nowrap;overflow-x:auto;padding:12px 16px;gap:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.qk button{flex:none;white-space:nowrap;padding:9px 14px;font-size:14px}
+.mbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);padding:10px 16px;border-bottom:1px solid var(--bd)}
+.mbar button{font:inherit;font-weight:600;border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:999px;padding:8px 16px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.mbar b{background:#FF8A1F;color:#fff;border-radius:999px;min-width:20px;height:20px;padding:0 6px;font-size:12px;display:inline-grid;place-items:center}
+.mbar b:empty{display:none}.mbar span{color:var(--mu);font-size:13px}
+.lay{grid-template-columns:minmax(0,1fr);padding:16px;gap:12px}
+aside{position:fixed;inset:0;z-index:100;max-height:none;background:var(--bg);transform:translateY(100%);visibility:hidden;transition:transform .25s ease,visibility .25s;display:flex;flex-direction:column;overflow:hidden}
+aside.open{transform:none;visibility:visible}
+.sh{display:flex;justify-content:space-between;align-items:center;padding:calc(12px + env(safe-area-inset-top,0px)) 16px 12px;border-bottom:1px solid var(--bd)}
+.sh h2{margin:0}
+#sx{display:block;font:inherit;font-size:20px;line-height:1;border:0;background:var(--cd);color:var(--tx);width:36px;height:36px;border-radius:50%;cursor:pointer}
+.sc{flex:1;overflow-y:auto;padding:16px}
+.sf{display:block;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--bd);background:var(--bg)}
+.sf button{width:100%;font:inherit;font-weight:600;border:0;border-radius:999px;padding:13px;background:var(--on);color:var(--onx);cursor:pointer}
+.top h1{font-size:20px}
+.gr{grid-template-columns:minmax(0,1fr);gap:14px}.card{padding:18px}.card h3{font-size:19px}
+.rc div{flex-wrap:wrap}
+.list .card{grid-template-columns:minmax(0,1fr)}.list .lg{grid-row:auto;height:70px}
+.mb{padding:44px 10px 12px}
+}
 </style></head><body>
 <header><a id="brand" href="#" aria-label="Trailendar – accueil"><svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 112" role="img" aria-label="Trailendar" height="46">
 <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
@@ -73,8 +97,8 @@ label.ck{display:flex;gap:10px;align-items:center;cursor:pointer;margin:8px 0}
 <text x="106" y="72" fill="currentColor" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="40" font-weight="800" letter-spacing="1.5">TRAILENDAR</text></svg></a>
 <div class="sr"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="q" type="search" placeholder="Rechercher un trail… (appuie sur /)" aria-label="Rechercher"></div></header>
 <div class="qk" id="qk"></div>
-<div class="lay" id="app"><aside>
-<h2>Filtres</h2>
+<div class="mbar" id="mbar"><button id="fo" type="button" aria-controls="side">☰ Filtres <b id="fc"></b></button><span id="n2"></span></div>
+<div class="lay" id="app"><aside id="side" aria-label="Filtres"><div class="sh"><h2>Filtres</h2><button id="sx" type="button" aria-label="Fermer les filtres">✕</button></div><div class="sc">
 <div class="vw"><button id="vg" aria-pressed="true">▦ Grille</button><button id="vl" aria-pressed="false">☰ Liste</button><button id="vm" aria-pressed="false">◍ Carte</button></div>
 <details open><summary>Trier par</summary><select id="so" aria-label="Tri"><option value="d">Date (la plus proche)</option><option value="n">Nom A–Z</option><option value="k">Distance max</option></select></details>
 <details open><summary>Département</summary><select id="dp" aria-label="Département"></select></details>
@@ -82,9 +106,9 @@ label.ck{display:flex;gap:10px;align-items:center;cursor:pointer;margin:8px 0}
 <details open><summary>Distance</summary><div class="pl" id="d"></div></details>
 <details open><summary>Dénivelé positif</summary><div class="pl" id="p"></div></details>
 <details open><summary>Inscription</summary><label class="ck"><input type="checkbox" id="rg"> Dates d’inscription communiquées</label></details>
-<button class="rs" id="rs">Réinitialiser</button></aside>
+<button class="rs" id="rs">Réinitialiser</button></div><div class="sf"><button id="sv" type="button">Voir les résultats</button></div></aside>
 <main><div class="top"><h1 id="h1">Tous les trails</h1><span id="n"></span></div>
-<section class="mb" id="mb" hidden><div class="mp" id="mp"></div><div class="mi"><h3>Carte des départements</h3><p>Clique sur un département pour filtrer la liste. Les départements colorés ont au moins un trail correspondant aux filtres.</p><p id="mc"></p><div class="lgd"><span>Moins</span><i></i><span>Plus de trails</span></div></div></section>
+<section class="mb" id="mb" hidden><div class="mp" id="mp"></div><button class="xb" id="mx" type="button" aria-label="Fermer la carte">✕ Fermer la carte</button></section>
 <div class="gr" id="l"></div>
 <p class="by" style="margin-top:24px">Données mises à jour automatiquement. « Inconnu » = aucune date d’inscription communiquée trouvée, ou événement pas encore crawlé (indiqué sur la carte). Distances et D+ 2027 parfois issus de l’édition 2026.<br>Fond de carte : @svg-maps/france.departments (licence CC BY 4.0).</p></main></div>
 <script>
@@ -125,11 +149,13 @@ const act=S.d!==null||S.p!==null,q=S.q.toLowerCase();
 const base=E.filter(e=>(!S.ms.size||S.ms.has(e.m))&&(!act||e.r.some(ok))&&qkok(e)&&(!S.rg||e.reg.k===1)&&(!q||(e.n+" "+e.lieu).toLowerCase().includes(q)));
 const res=base.filter(e=>!S.dep||e.dep===S.dep);
 res.sort((a,b)=>S.so==="n"?a.n.localeCompare(b.n,"fr"):S.so==="k"?kmax(b)-kmax(a):a.m-b.m||a.n.localeCompare(b.n,"fr"));
+const nf=S.ms.size+(S.d!==null)+(S.p!==null)+(S.dep?1:0)+(S.rg?1:0)+(S.qk!==null?1:0);
+$("fc").textContent=nf||"";$("n2").textContent=`${res.length} trail${res.length>1?"s":""}`;$("sv").textContent=`Voir ${res.length} trail${res.length>1?"s":""}`;
 $("h1").textContent=S.dep?`Trails · ${NAMES[S.dep]} (${S.dep})`:"Tous les trails";
 $("n").textContent=`${res.length} sur ${E.length} trails`;
 $("mb").hidden=S.v!=="m";
 if(S.v==="m"){const cnt={};base.forEach(e=>cnt[e.dep]=(cnt[e.dep]||0)+1);$("mp").innerHTML=mapSvg(cnt);
-$("mc").textContent=S.dep?`Sélection : ${S.dep} – ${NAMES[S.dep]} (${cnt[S.dep]||0} trail${(cnt[S.dep]||0)>1?"s":""}). Reclique pour désélectionner.`:`${Object.keys(cnt).length} département${Object.keys(cnt).length>1?"s":""} avec des données.`}
+}
 $("l").innerHTML=res.map(e=>{
 const rows=e.r.slice(0,6).map(r=>`<div class="${act&&!ok(r)?"off":""}"><span>${r[0]}</span><span>${r[5]||r[1]+" km"} · <small>${r[2]!=null?"D+ "+(r[6]||r[2]+" m"):"D+ ?"}${r[3]?" · D− "+r[3]+" m":""}${r[4]?" · "+r[4]:""}</small></span></div>`).join("");
 const more=e.r.length>6?`<small style="color:var(--mu)">+ ${e.r.length-6} autres épreuves</small>`:"";
@@ -144,11 +170,17 @@ $("q").oninput=e=>{S.q=e.target.value;draw()};
 $("so").onchange=e=>{S.so=e.target.value;draw()};
 $("dp").onchange=e=>{S.dep=e.target.value;draw()};
 $("rg").onchange=e=>{S.rg=e.target.checked;draw()};
-$("vg").onclick=()=>{S.v="g";draw()};$("vl").onclick=()=>{S.v="l";draw()};$("vm").onclick=()=>{S.v="m";draw()};
+$("vg").onclick=()=>{S.v="g";draw()};$("vl").onclick=()=>{S.v="l";draw()};$("vm").onclick=()=>{if(S.v==="m"){S.v=S.pv||"g"}else{S.pv=S.v;S.v="m"}draw()};
+$("mx").onclick=()=>{S.v=S.pv||"g";draw()};
 const pick=t=>{const p=t.closest&&t.closest("path[data-c]");if(p){S.dep=S.dep===p.dataset.c?"":p.dataset.c;draw()}};
 $("mp").onclick=e=>pick(e.target);
 $("mp").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(e.target)}};
 $("rs").onclick=()=>{Object.assign(S,{q:"",d:null,p:null,qk:null,rg:false,dep:""});S.ms.clear();$("q").value="";$("rg").checked=false;draw()};
 addEventListener("keydown",e=>{if(e.key==="/"&&document.activeElement!==$("q")&&document.activeElement.tagName!=="SELECT"){e.preventDefault();$("q").focus()}});
+const side=$("side"),openSide=o=>{side.classList.toggle("open",o);document.documentElement.classList.toggle("lock",o)};
+$("fo").onclick=()=>openSide(true);$("sx").onclick=()=>openSide(false);$("sv").onclick=()=>openSide(false);
+addEventListener("keydown",e=>{if(e.key==="Escape")openSide(false)});
+matchMedia("(min-width:821px)").addEventListener("change",e=>{if(e.matches)openSide(false)});
+if(matchMedia("(max-width:820px)").matches)document.querySelectorAll("aside details").forEach(d=>d.removeAttribute("open"));
 fetch("trails.json",{cache:"no-cache"}).then(r=>r.json()).then(d=>{E=d.events;const t=d.updated.split("-");V=t[2]+"/"+t[1]+"/"+t[0];init();draw()}).catch(()=>{$("l").innerHTML='<div class="em">Impossible de charger trails.json.</div>'});
 </script></body></html>
