@@ -56,6 +56,13 @@ label.ck{display:flex;gap:10px;align-items:center;cursor:pointer;margin:8px 0}
 .rc div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid var(--bd);padding-bottom:4px}
 .rc div.off{opacity:.35}.rc small{color:var(--mu)}
 .rg{display:flex;gap:8px;align-items:flex-start;font-size:13px}
+.reg{border-left:4px solid var(--un);background:var(--bg);border-radius:8px;padding:10px 12px}
+.reg.k{border-left-color:var(--ok)}
+.rl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--mu);font-weight:600}
+.reg.k .rl{color:var(--ok)}
+.rt{font-size:14px;font-weight:600;margin-top:2px}
+.reg.u .rt{color:var(--mu);font-weight:500}
+.rs2{font-size:13px;color:var(--mu);margin-top:2px}
 .bd{flex:none;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600}
 .bd.k{background:var(--ok2);color:var(--ok)}.bd.u{background:var(--un2);color:var(--un)}
 .by{color:var(--mu);font-size:12.5px}
@@ -106,13 +113,13 @@ aside.open{transform:none;visibility:visible}
 <details open><summary>Mois</summary><div class="pl" id="m"></div></details>
 <details open><summary>Distance</summary><div class="pl" id="d"></div></details>
 <details open><summary>Dénivelé positif</summary><div class="pl" id="p"></div></details>
-<details open><summary>Inscription</summary><label class="ck"><input type="checkbox" id="rg"> Dates d’inscription communiquées</label></details>
+<details open><summary>Inscription</summary><label class="ck"><input type="checkbox" id="rg"> Dates d’inscription connues</label></details>
 <button class="rs" id="rs">Réinitialiser</button></div><div class="sf"><button id="sv" type="button">Voir les résultats</button></div></aside>
 <main><div class="top"><h1 id="h1">Tous les trails</h1><span id="n"></span></div>
 <div class="vw" id="vw" role="group" aria-label="Mode d’affichage"><button id="vg" aria-pressed="true">▦ Grille</button><button id="vl" aria-pressed="false">☰ Liste</button><button id="vm" aria-pressed="false">◍ Carte</button></div>
 <section class="mb" id="mb" hidden><div class="mp" id="mp"></div><button class="xb" id="mx" type="button" aria-label="Fermer la carte">✕ Fermer la carte</button></section>
 <div class="gr" id="l"></div>
-<p class="by" style="margin-top:24px">Données mises à jour automatiquement. « Inconnu » = aucune date d’inscription communiquée trouvée, ou événement pas encore crawlé (indiqué sur la carte). Distances et D+ 2027 parfois issus de l’édition 2026.<br>Fond de carte : @svg-maps/france.departments (licence CC BY 4.0).</p></main></div>
+<p class="by" style="margin-top:24px">Les données sont mises à jour automatiquement. « Date d’inscription inconnue » signifie qu’aucune date d’ouverture ou de clôture des inscriptions n’a été trouvée sur les sources consultées : vérifie toujours sur la page de l’événement. Distances et D+ parfois issus de l’édition précédente.<br>Fond de carte : @svg-maps/france.departments (licence CC BY 4.0).</p></main></div>
 <script>
 const M=["Jan","Fév","Mar","Avr","Mai","Juin","Juil","Août","Sep","Oct","Nov","Déc"];
 const DB=[["0–10 km",0,10],["10–20 km",10,20],["20–40 km",20,40],["40–80 km",40,80],["80 km +",80,999]];
@@ -135,6 +142,7 @@ $("dp").innerHTML='<option value="">Tous les départements</option>'+CODES.map(c
 function pills(id,items,on,fn){const c=$(id);c.innerHTML="";items.forEach((t,i)=>{const b=document.createElement("button");b.textContent=t;b.setAttribute("aria-pressed",on(i));b.onclick=()=>{fn(i);draw()};c.appendChild(b)})}
 const MT='<svg viewBox="0 0 80 60" width="90" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" style="color:#9a9a92"><path d="M4 52 28 14l14 22 8-12 26 28z"/><path d="m22 24 6 6 6-6"/></svg>';
 window.MT=MT;
+const regSub=e=>{if(e.reg.k)return"";const t=e.reg.c?(/^Aucune date/.test(e.reg.t)?"":e.reg.t):"Pas encore vérifié";return t?`<div class="rs2">${t}</div>`:""};
 function logo(e){return e.lurl?`<img src="${e.lurl}" alt="Logo ${e.n}" onerror="this.outerHTML=window.MT">`:MT}
 function mapSvg(cnt){const mx=Math.max(1,...Object.values(cnt));
 return '<svg viewBox="0 0 613 585" role="group" aria-label="Carte des départements français">'+Object.keys(MAP).sort((a,b)=>(a===S.dep)-(b===S.dep)).map(c=>{if(!NAMES[c])return `<path class="x" d="${MAP[c][1]}"/>`;const n=cnt[c]||0;
@@ -164,8 +172,8 @@ const more=e.r.length>6?`<small style="color:var(--mu)">+ ${e.r.length-6} autres
 return `<article class="card"><h3>${e.n}</h3><div class="sb">${e.r.length?e.r.length+" distance"+(e.r.length>1?"s":""):"Distances à compléter"} · ${e.lieu} · ${e.date}</div>
 <div class="lg">${logo(e)}</div>
 <div class="rc">${rows||'<small>Épreuves non encore collectées</small>'}${more}</div>
-<div class="rg"><span class="bd ${e.reg.k?"k":"u"}">${e.reg.k?"Dates communiquées":"Inconnu"}</span><span>${e.reg.t}</span></div>
-<div class="by">Source : ${e.src} · ${e.reg.c?"crawlé":"non crawlé"} le ${e.chk?e.chk.split("-").reverse().join("/"):V}</div>
+<div class="reg ${e.reg.k?"k":"u"}"><div class="rl">📅 Inscriptions</div><div class="rt">${e.reg.k?e.reg.t:"Date d’inscription inconnue"}</div>${regSub(e)}</div>
+<div class="by">Source : ${e.src} · Dernière mise à jour le ${e.chk?e.chk.split("-").reverse().join("/"):V}</div>
 ${e.url?`<a class="go" href="${e.url}" target="_blank" rel="noopener">Page d’inscription ↗</a>`:`<span class="by">Lien d’inscription : à trouver</span>`}</article>`}).join("")||
 `<div class="em">${S.dep&&!tot[S.dep]?`Aucune donnée collectée pour ${NAMES[S.dep]} (${S.dep}) pour l’instant. Seule la Haute-Savoie (74) est couverte, les autres départements arrivent avec le crawl.`:"Aucun trail ne correspond à ces filtres."}</div>`}
 $("q").oninput=e=>{S.q=e.target.value;draw()};
