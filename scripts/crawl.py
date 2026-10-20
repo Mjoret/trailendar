@@ -2,9 +2,10 @@
 """Crawler Trailendar : découvre les trails par département, lit chaque fiche,
 et met à jour trails.json. Nécessite FIRECRAWL_API_KEY.
 Variables : DISCOVER=1 (liste les départements), MAX_EVENTS (budget de fiches/run),
-ONLY_DEPS="74,73" (limiter à certains départements, utile pour tester)."""
-import os, json, sys, time, unicodedata, datetime as dt
-from urllib.parse import urljoin
+ONLY_DEPS="74,73" (limiter à certains départements, utile pour tester),
+EXCLUDE_DEPS="971,972,973,974,976,2A,2B" (départements à ignorer)."""
+import os, re, json, sys, time, unicodedata, datetime as dt
+from urllib.parse import urljoin, urlparse
 import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -16,7 +17,8 @@ API = "https://api.firecrawl.dev/v1"
 BASE = "https://fr.milesrepublic.com"
 MAX_EVENTS = int(os.environ.get("MAX_EVENTS", "120"))
 DISCOVER = os.environ.get("DISCOVER") == "1"
-ONLY = [d for d in os.environ.get("ONLY_DEPS", "").split(",") if d]
+ONLY = [d.strip() for d in os.environ.get("ONLY_DEPS", "").split(",") if d.strip()]
+EXCLUDE = {d.strip() for d in os.environ.get("EXCLUDE_DEPS", "").split(",") if d.strip()}
 MAX_PAGES = 6
 TODAY = dt.date.today()
 MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"]
@@ -83,6 +85,17 @@ def due(e):
     chk = e.get("chk")
     return not chk or (TODAY - dt.date.fromisoformat(chk)).days >= interval_days(e)
 
+def fix_url(u, base=None):
+    """Retourne une URL absolue http(s) ou None (gère '//x', 'www.x.fr/...', '/chemin')."""
+    if not u or not isinstance(u, str): return None
+    u = u.strip()
+    if u.startswith("//"): u = "https:" + u
+    p = urlparse(u)
+    if p.scheme in ("http", "https") and p.netloc: return u
+    if p.scheme: return None
+    if re.match(r"^[^\s/?#]+\.[a-z]{2,}([/?#]|$)", u): return "https://" + u
+    return urljoin(base, u) if base else None
+
 def num(x):
     return round(x) if isinstance(x, (int, float)) else None
 
@@ -105,7 +118,7 @@ def build(dep, listed, det, reg):
             "n": det.get("name") or listed["name"], "m": m, "iso": iso,
             "lieu": det.get("city") or listed.get("city") or DEPS[dep],
             "date": (det.get("date_text") or f"{MOIS[m]} {year}"),
-            "url": det.get("registration_url") or None, "lurl": None,
+            "url": fix_url(det.get("registration_url"), listed.get("url")), "lurl": None,
             "src": "milesrepublic.com" + (" + site officiel" if det.get("official_website") else ""),
             "reg": {"k": 1 if stated and text else 0,
                     "t": text if stated and text else "Aucune date d’inscription communiquée trouvée",
@@ -118,7 +131,7 @@ def main():
     ev = {e["id"]: e for e in db["events"]}
     report = {"date": TODAY.isoformat(), "listing_errors": [], "detail_errors": [], "new": 0, "updated": 0}
     todo = []  # (dep, listed)
-    deps = ONLY or list(DEPS)
+    deps = [d for d in (ONLY or list(DEPS)) if d not in EXCLUDE]
     if DISCOVER:
         for dep in deps:
             if dep not in DEPS: continue
@@ -135,7 +148,7 @@ def main():
             if not found: report["listing_errors"].append({"dep": dep, "name": DEPS[dep]})
     else:
         for e in ev.values():
-            if due(e) and e.get("src_url") and (not ONLY or e["dep"] in ONLY):
+            if due(e) and e.get("src_url") and e["dep"] not in EXCLUDE and (not ONLY or e["dep"] in ONLY):
                 todo.append((e["dep"], {"name": e["n"], "url": e["src_url"], "month": e["m"] + 1}))
     seen, queue = set(), []
     for dep, it in todo:
@@ -152,7 +165,7 @@ def main():
             report["detail_errors"].append(it["url"]); continue
         reg = det
         if not det.get("registration_dates_stated"):
-            site = det.get("registration_url") or det.get("official_website")
+            site = fix_url(det.get("registration_url"), it["url"]) or fix_url(det.get("official_website"), it["url"])
             if site:
                 reg = extract(site, REG_SCHEMA, REG_PROMPT) or det
         e = build(dep, it, det, reg)
