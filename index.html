@@ -23,7 +23,7 @@ aside{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;ove
 aside h2{font-size:17px;font-weight:500;margin:0 0 20px}
 .mbar,.sf,#sx{display:none}
 html.lock{overflow:hidden}
-.vw{display:grid;grid-template-columns:repeat(3,1fr);background:var(--ch);border-radius:8px;padding:4px;margin-bottom:22px}
+.vw{display:grid;grid-template-columns:repeat(3,1fr);background:var(--ch);border-radius:8px;padding:4px;margin-bottom:18px;max-width:340px}
 .vw button{font:inherit;font-size:14px;background:none;border:0;padding:8px 4px;border-radius:6px;color:var(--tx);cursor:pointer}
 .vw button[aria-pressed=true]{background:var(--bg);box-shadow:0 0 0 1px var(--bd)}
 details{margin-bottom:20px}summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;margin-bottom:12px}
@@ -68,9 +68,10 @@ header{flex-wrap:wrap;gap:10px;padding:10px 16px}#logo{height:38px}.sr{order:3;f
 .qk{flex-wrap:nowrap;overflow-x:auto;padding:12px 16px;gap:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .qk button{flex:none;white-space:nowrap;padding:9px 14px;font-size:14px}
 .mbar{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);padding:10px 16px;border-bottom:1px solid var(--bd)}
-.mbar button{font:inherit;font-weight:600;border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:999px;padding:8px 16px;cursor:pointer;display:flex;gap:8px;align-items:center}
+#fo{font:inherit;font-weight:600;border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:999px;padding:8px 16px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.mbar .vw{margin:0;flex:1;max-width:none}.mbar .vw button{white-space:nowrap}
 .mbar b{background:#FF8A1F;color:#fff;border-radius:999px;min-width:20px;height:20px;padding:0 6px;font-size:12px;display:inline-grid;place-items:center}
-.mbar b:empty{display:none}.mbar span{color:var(--mu);font-size:13px}
+.mbar b:empty{display:none}#n2{display:none}
 .lay{grid-template-columns:minmax(0,1fr);padding:16px;gap:12px}
 aside{position:fixed;inset:0;z-index:100;max-height:none;background:var(--bg);transform:translateY(100%);visibility:hidden;transition:transform .25s ease,visibility .25s;display:flex;flex-direction:column;overflow:hidden}
 aside.open{transform:none;visibility:visible}
@@ -99,7 +100,6 @@ aside.open{transform:none;visibility:visible}
 <div class="qk" id="qk"></div>
 <div class="mbar" id="mbar"><button id="fo" type="button" aria-controls="side">☰ Filtres <b id="fc"></b></button><span id="n2"></span></div>
 <div class="lay" id="app"><aside id="side" aria-label="Filtres"><div class="sh"><h2>Filtres</h2><button id="sx" type="button" aria-label="Fermer les filtres">✕</button></div><div class="sc">
-<div class="vw"><button id="vg" aria-pressed="true">▦ Grille</button><button id="vl" aria-pressed="false">☰ Liste</button><button id="vm" aria-pressed="false">◍ Carte</button></div>
 <details open><summary>Trier par</summary><select id="so" aria-label="Tri"><option value="d">Date (la plus proche)</option><option value="n">Nom A–Z</option><option value="k">Distance max</option></select></details>
 <details open><summary>Département</summary><select id="dp" aria-label="Département"></select></details>
 <details open><summary>Mois</summary><div class="pl" id="m"></div></details>
@@ -108,6 +108,7 @@ aside.open{transform:none;visibility:visible}
 <details open><summary>Inscription</summary><label class="ck"><input type="checkbox" id="rg"> Dates d’inscription communiquées</label></details>
 <button class="rs" id="rs">Réinitialiser</button></div><div class="sf"><button id="sv" type="button">Voir les résultats</button></div></aside>
 <main><div class="top"><h1 id="h1">Tous les trails</h1><span id="n"></span></div>
+<div class="vw" id="vw" role="group" aria-label="Mode d’affichage"><button id="vg" aria-pressed="true">▦ Grille</button><button id="vl" aria-pressed="false">☰ Liste</button><button id="vm" aria-pressed="false">◍ Carte</button></div>
 <section class="mb" id="mb" hidden><div class="mp" id="mp"></div><button class="xb" id="mx" type="button" aria-label="Fermer la carte">✕ Fermer la carte</button></section>
 <div class="gr" id="l"></div>
 <p class="by" style="margin-top:24px">Données mises à jour automatiquement. « Inconnu » = aucune date d’inscription communiquée trouvée, ou événement pas encore crawlé (indiqué sur la carte). Distances et D+ 2027 parfois issus de l’édition 2026.<br>Fond de carte : @svg-maps/france.departments (licence CC BY 4.0).</p></main></div>
@@ -177,6 +178,8 @@ $("mp").onclick=e=>pick(e.target);
 $("mp").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(e.target)}};
 $("rs").onclick=()=>{Object.assign(S,{q:"",d:null,p:null,qk:null,rg:false,dep:""});S.ms.clear();$("q").value="";$("rg").checked=false;draw()};
 addEventListener("keydown",e=>{if(e.key==="/"&&document.activeElement!==$("q")&&document.activeElement.tagName!=="SELECT"){e.preventDefault();$("q").focus()}});
+const mq=matchMedia("(max-width:820px)"),placeVw=()=>{const v=$("vw");if(mq.matches)$("mbar").appendChild(v);else $("n").parentNode.insertAdjacentElement("afterend",v)};
+placeVw();mq.addEventListener("change",placeVw);
 const side=$("side"),openSide=o=>{side.classList.toggle("open",o);document.documentElement.classList.toggle("lock",o)};
 $("fo").onclick=()=>openSide(true);$("sx").onclick=()=>openSide(false);$("sv").onclick=()=>openSide(false);
 addEventListener("keydown",e=>{if(e.key==="Escape")openSide(false)});
