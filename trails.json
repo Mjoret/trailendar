@@ -1,0 +1,701 @@
+{
+ "updated": "2026-10-20",
+ "events": [
+  {
+   "id": "74-hoka-utmb-mont-blanc",
+   "dep": "74",
+   "n": "HOKA UTMB Mont-Blanc",
+   "m": 7,
+   "lieu": "Chamonix-Mont-Blanc",
+   "date": "fin août 2027",
+   "url": "https://montblanc.utmb.world/",
+   "lurl": null,
+   "src": "reference-trail.fr, utmb.world",
+   "reg": {
+    "k": 0,
+    "t": "Calendrier 2027 pas encore publié (tirage au sort attendu début d’année)",
+    "c": 1
+   },
+   "r": [
+    [
+     "PTL",
+     300,
+     25000,
+     null,
+     "08:00"
+    ],
+    [
+     "UTMB",
+     174,
+     9900,
+     null,
+     "17:45"
+    ],
+    [
+     "TDS",
+     145,
+     9500,
+     null,
+     "23:50"
+    ],
+    [
+     "CCC",
+     101,
+     6050,
+     null,
+     "09:00"
+    ],
+    [
+     "OCC",
+     60,
+     3500,
+     null,
+     "08:15"
+    ],
+    [
+     "MCC",
+     40,
+     2350,
+     null,
+     null
+    ],
+    [
+     "ETC",
+     15,
+     1200,
+     null,
+     null
+    ],
+    [
+     "YCC",
+     15,
+     1200,
+     null,
+     null
+    ]
+   ],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-maxi-race-du-lac-d-annecy",
+   "dep": "74",
+   "n": "MaXi-Race du lac d’Annecy",
+   "m": 4,
+   "lieu": "Annecy",
+   "date": "28–30 mai 2027",
+   "url": "https://www.maxi-race.org/inscriptions/",
+   "lurl": null,
+   "src": "maxi-race.org",
+   "reg": {
+    "k": 1,
+    "t": "Pré-inscription du 1er au 7 oct. 2026, clôturée · liste d’attente annoncée",
+    "c": 1
+   },
+   "r": [
+    [
+     "tOur du Lac solo",
+     101,
+     5400,
+     null,
+     "01:25",
+     "100–103 km",
+     "5300–5500 m"
+    ],
+    [
+     "tOur en 2 jours",
+     106,
+     6250,
+     null,
+     null,
+     "104–108 km",
+     "6100–6400 m"
+    ],
+    [
+     "Demi-tOur",
+     56.5,
+     3350,
+     null,
+     null,
+     "55–58 km",
+     "3200–3500 m"
+    ],
+    [
+     "Marathon eXpérience",
+     40,
+     1700,
+     null,
+     null,
+     "38–42 km",
+     "1600–1800 m"
+    ],
+    [
+     "Quart-de-tOur",
+     19.5,
+     410,
+     1450,
+     null,
+     "19–20 km"
+    ]
+   ],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-evian-urban-trail",
+   "dep": "74",
+   "n": "Evian Urban Trail",
+   "m": 3,
+   "lieu": "Évian-les-Bains",
+   "date": "24 avril 2027 (à confirmer)",
+   "url": "https://www.chronotop.run/urban-trail-evian/",
+   "lurl": null,
+   "src": "trainerday, athle.fr",
+   "reg": {
+    "k": 0,
+    "t": "Aucune date d’ouverture 2027 trouvée",
+    "c": 1
+   },
+   "r": [
+    [
+     "Solo XL",
+     30,
+     1000,
+     null,
+     "15:45"
+    ],
+    [
+     "Urban Trail",
+     16,
+     460,
+     null,
+     "17:00"
+    ],
+    [
+     "Sprint",
+     8,
+     230,
+     null,
+     "16:00"
+    ],
+    [
+     "Enfants",
+     4.5,
+     null,
+     null,
+     "16:20"
+    ]
+   ],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-course-de-la-dent-d-oche",
+   "dep": "74",
+   "n": "Course de la Dent d’Oche",
+   "m": 5,
+   "lieu": "Haute-Savoie",
+   "date": "juin 2027 (à confirmer)",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [
+    [
+     "Ultra",
+     62
+    ],
+    [
+     "Trail",
+     33
+    ],
+    [
+     "Trail court",
+     21
+    ],
+    [
+     "Découverte",
+     8
+    ]
+   ],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-des-dahus-sallanchards",
+   "dep": "74",
+   "n": "Trail des Dahus Sallanchards",
+   "m": 3,
+   "lieu": "Sallanches",
+   "date": "avril 2027 (à confirmer)",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [
+    [
+     "Trail",
+     26
+    ],
+    [
+     "Trail",
+     15
+    ],
+    [
+     "Trail",
+     8
+    ],
+    [
+     "Marche/enfants",
+     5
+    ]
+   ],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-vertical-race-du-lac-d-annecy",
+   "dep": "74",
+   "n": "Vertical Race du lac d’Annecy",
+   "m": 3,
+   "lieu": "Sévrier",
+   "date": "avril 2027 (à confirmer)",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [
+    [
+     "Uphill",
+     7.6
+    ],
+    [
+     "Uphill court",
+     5.6
+    ]
+   ],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-blanc-dragonale-givree",
+   "dep": "74",
+   "n": "Trail blanc « Dragonale Givrée »",
+   "m": 1,
+   "lieu": "Praz-sur-Arly",
+   "date": "février 2027 (à confirmer)",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [
+    [
+     "Trail blanc",
+     12
+    ],
+    [
+     "Trail blanc",
+     8
+    ]
+   ],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-blanc-d-agy",
+   "dep": "74",
+   "n": "Trail blanc d’Agy",
+   "m": 1,
+   "lieu": "Haute-Savoie",
+   "date": "fév 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-de-l-aigle-blanc-manigod",
+   "dep": "74",
+   "n": "Trail de l’Aigle Blanc (Manigod)",
+   "m": 1,
+   "lieu": "Haute-Savoie",
+   "date": "fév 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-skate",
+   "dep": "74",
+   "n": "Trail & Skate",
+   "m": 1,
+   "lieu": "Haute-Savoie",
+   "date": "fév 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-lyaud-trail",
+   "dep": "74",
+   "n": "Lyaud Trail",
+   "m": 2,
+   "lieu": "Haute-Savoie",
+   "date": "mar 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-d-annecy-les-glaisins",
+   "dep": "74",
+   "n": "Trail d’Annecy – Les Glaisins",
+   "m": 2,
+   "lieu": "Haute-Savoie",
+   "date": "mar 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-de-bonneville",
+   "dep": "74",
+   "n": "Trail de Bonneville",
+   "m": 3,
+   "lieu": "Haute-Savoie",
+   "date": "avr 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-de-la-mandallaz",
+   "dep": "74",
+   "n": "Trail de la Mandallaz",
+   "m": 3,
+   "lieu": "Haute-Savoie",
+   "date": "avr 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-thusy-en-trail",
+   "dep": "74",
+   "n": "Thusy en Trail",
+   "m": 3,
+   "lieu": "Haute-Savoie",
+   "date": "avr 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-running-festival",
+   "dep": "74",
+   "n": "Trail Running Festival",
+   "m": 3,
+   "lieu": "Haute-Savoie",
+   "date": "avr 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-gend-trail",
+   "dep": "74",
+   "n": "Gend’Trail",
+   "m": 4,
+   "lieu": "Haute-Savoie",
+   "date": "mai 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-du-laudon",
+   "dep": "74",
+   "n": "Trail du Laudon",
+   "m": 4,
+   "lieu": "Haute-Savoie",
+   "date": "mai 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-du-vouan",
+   "dep": "74",
+   "n": "Trail du Vouan",
+   "m": 4,
+   "lieu": "Haute-Savoie",
+   "date": "mai 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-du-grand-geneve",
+   "dep": "74",
+   "n": "Trail du Grand Genève",
+   "m": 4,
+   "lieu": "Haute-Savoie",
+   "date": "mai 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-du-gypaete",
+   "dep": "74",
+   "n": "Trail du Gypaète",
+   "m": 5,
+   "lieu": "Haute-Savoie",
+   "date": "juin 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-du-brevon",
+   "dep": "74",
+   "n": "Trail du Brevon",
+   "m": 5,
+   "lieu": "Haute-Savoie",
+   "date": "juin 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-fah-ame",
+   "dep": "74",
+   "n": "Trail Fah’ame",
+   "m": 5,
+   "lieu": "Haute-Savoie",
+   "date": "juin 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-du-saleve",
+   "dep": "74",
+   "n": "Trail du Salève",
+   "m": 5,
+   "lieu": "Haute-Savoie",
+   "date": "juin 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-aravis-trail",
+   "dep": "74",
+   "n": "Aravis Trail",
+   "m": 5,
+   "lieu": "Haute-Savoie",
+   "date": "juin 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-de-la-roche-ecrite",
+   "dep": "74",
+   "n": "Trail de la Roche Écrite",
+   "m": 5,
+   "lieu": "Haute-Savoie",
+   "date": "juin 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  },
+  {
+   "id": "74-trail-du-tour-des-fiz",
+   "dep": "74",
+   "n": "Trail du Tour des Fiz",
+   "m": 6,
+   "lieu": "Haute-Savoie",
+   "date": "juil 2027",
+   "url": null,
+   "lurl": null,
+   "src": "milesrepublic.com",
+   "reg": {
+    "k": 0,
+    "t": "Pas encore vérifié",
+    "c": 0
+   },
+   "r": [],
+   "chk": "2026-10-20",
+   "manual": true
+  }
+ ]
+}
