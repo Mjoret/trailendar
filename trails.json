@@ -1950,44 +1950,86 @@
   {
    "id": "01-la-saint-so-course",
    "dep": "01",
-   "n": "La Saint So Course",
+   "n": "La Saint so course",
    "m": 8,
    "iso": "2027-09-01",
-   "lieu": "Saint Sorlin En Bugey",
+   "lieu": "Saint-Sorlin-en-Bugey",
    "date": "Septembre 2027",
-   "url": null,
+   "url": "null",
    "lurl": null,
    "src": "milesrepublic.com + site officiel",
    "reg": {
-    "k": 1,
-    "t": "20 Septembre 2026",
+    "k": 0,
+    "t": "Aucune date d’inscription communiquée trouvée",
     "c": 1
    },
    "r": [
     [
-     "Trail 42 km",
-     42,
+     "Le maratrail du bugey",
+     42.195,
      2250,
      0,
      "08:00"
     ],
     [
-     "Course 23 km",
+     "Le maratrail du bugey relais",
+     42.195,
+     2250,
+     0,
+     "08:00"
+    ],
+    [
+     "Trail la boucle des pèlerins 23 km",
      23,
      1000,
      0,
      "09:00"
     ],
     [
-     "Course 10 km",
+     "Marche 18 km",
+     18,
+     0,
+     0,
+     "08:00"
+    ],
+    [
+     "Marche 10 km",
+     10,
+     0,
+     0,
+     "08:00"
+    ],
+    [
+     "Trail la pouponne 10 km",
      10,
      230,
      0,
      "10:00"
+    ],
+    [
+     "Trail Saint So enfants 2,6 km",
+     2.6,
+     0,
+     0,
+     "08:00"
+    ],
+    [
+     "Trail Saint So enfants 960 m",
+     0.96,
+     0,
+     0,
+     "08:00"
+    ],
+    [
+     "Trail découvert 600 m",
+     0.6,
+     0,
+     0,
+     "08:00"
     ]
    ],
    "chk": "2026-10-20",
-   "src_url": "https://fr.milesrepublic.com/event/la-saint-so-course-17432"
+   "src_url": "https://fr.milesrepublic.com/event/la-saint-so-course-2850"
   },
   {
    "id": "01-la-nuit-ajt",
