@@ -18,6 +18,7 @@ jobs:
       - run: pip install requests
       - run: python scripts/crawl.py
         env:
+          ONLY_DEPS: "73, 74, 04, 30, 25"
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           DISCOVER: ${{ (github.event.schedule == '0 3 * * 1' || github.event_name == 'workflow_dispatch') && '1' || '0' }}
           MAX_EVENTS: "150"
