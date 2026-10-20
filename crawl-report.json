@@ -1,7 +1,12 @@
 {
  "date": "2026-10-20",
- "listing_errors": [],
+ "listing_errors": [
+  {
+   "dep": "73",
+   "name": "Savoie"
+  }
+ ],
  "detail_errors": [],
  "new": 0,
- "updated": 1
+ "updated": 0
 }
