@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25",
+ "updated": "2026-10-26",
  "events": [
   {
    "id": "01-la-trace-des-maquisards",
@@ -2786,55 +2786,6 @@
    ],
    "chk": "2026-10-20",
    "src_url": "https://fr.milesrepublic.com/event/trail-des-3-villages-16218"
-  },
-  {
-   "id": "01-trail-de-l-albarine",
-   "dep": "01",
-   "n": "Trail de l'Albarine",
-   "m": 9,
-   "iso": "2026-10-25",
-   "lieu": "Torcieu",
-   "date": "Dimanche 25 octobre 2026",
-   "url": null,
-   "lurl": null,
-   "src": "milesrepublic.com",
-   "reg": {
-    "k": 0,
-    "t": "Aucune date d’inscription communiquée trouvée",
-    "c": 1
-   },
-   "r": [
-    [
-     "Trail 15 km",
-     15,
-     470,
-     0,
-     "09:00"
-    ],
-    [
-     "Trail 7 km",
-     7,
-     50,
-     0,
-     "09:30"
-    ],
-    [
-     "Trail 5 km",
-     5,
-     50,
-     0,
-     "10:00"
-    ],
-    [
-     "Course Enfants 800 m",
-     0.8,
-     0,
-     0,
-     "11:30"
-    ]
-   ],
-   "chk": "2026-10-20",
-   "src_url": "https://fr.milesrepublic.com/event/trail-de-lalbarine-17610"
   },
   {
    "id": "01-trail-de-la-cotiere",
