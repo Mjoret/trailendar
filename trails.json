@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31",
+ "updated": "2026-11-01",
  "events": [
   {
    "id": "01-la-trace-des-maquisards",
@@ -2548,69 +2548,6 @@
    ],
    "chk": "2026-10-20",
    "src_url": "https://fr.milesrepublic.com/event/defi-de-fort-l-ecluse-3656"
-  },
-  {
-   "id": "01-la-foulee-des-monts-d-ain",
-   "dep": "01",
-   "n": "La Foulée Des Monts D'ain",
-   "m": 9,
-   "iso": "2026-10-31",
-   "lieu": "Port",
-   "date": "Samedi 31 octobre 2026",
-   "url": "/event/la-foulee-des-monts-dain-17814",
-   "lurl": null,
-   "src": "milesrepublic.com + site officiel",
-   "reg": {
-    "k": 0,
-    "t": "Aucune date d’inscription communiquée trouvée",
-    "c": 1
-   },
-   "r": [
-    [
-     "Trail 77.2 km",
-     77.2,
-     2362,
-     0,
-     ""
-    ],
-    [
-     "Trail Relais 77.2 km",
-     77.2,
-     2362,
-     0,
-     ""
-    ],
-    [
-     "Trail 43.4 km",
-     43.4,
-     1371,
-     0,
-     ""
-    ],
-    [
-     "Trail Relais 43.4 km",
-     43.4,
-     1371,
-     0,
-     ""
-    ],
-    [
-     "Trail 22.8 km",
-     22.8,
-     994,
-     0,
-     ""
-    ],
-    [
-     "Trail 10.8 km",
-     10.8,
-     203,
-     0,
-     ""
-    ]
-   ],
-   "chk": "2026-10-20",
-   "src_url": "https://fr.milesrepublic.com/event/la-foulee-des-monts-dain-17814"
   },
   {
    "id": "01-la-jasseronnai-se-trail",
