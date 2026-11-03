@@ -1,28 +1,31 @@
 {
- "date": "2026-11-02",
- "listing_errors": [
-  {
-   "dep": "73",
-   "name": "Savoie"
-  },
-  {
-   "dep": "74",
-   "name": "Haute-Savoie"
-  },
-  {
-   "dep": "01",
-   "name": "Ain"
-  },
-  {
-   "dep": "39",
-   "name": "Jura"
-  },
-  {
-   "dep": "25",
-   "name": "Doubs"
-  }
+ "date": "2026-11-03",
+ "listing_errors": [],
+ "detail_errors": [
+  "https://fr.milesrepublic.com/event/la-trace-des-maquisards-7362",
+  "https://fr.milesrepublic.com/event/chaveyno-z-tour-4458",
+  "https://fr.milesrepublic.com/event/hivernal-retord-trail-6639",
+  "https://fr.milesrepublic.com/event/trail-de-la-michaille-4579",
+  "https://fr.milesrepublic.com/event/trail-de-perouges-8854",
+  "https://fr.milesrepublic.com/event/trail-des-chamois-1324",
+  "https://fr.milesrepublic.com/event/trail-du-lac-18178",
+  "https://fr.milesrepublic.com/event/veyziatrail-7649",
+  "https://fr.milesrepublic.com/event/enduro-trail-de-nantua-6641",
+  "https://fr.milesrepublic.com/event/escrapade-4868",
+  "https://fr.milesrepublic.com/event/la-vauxoise-4774",
+  "https://fr.milesrepublic.com/event/trail-de-douvres-5027",
+  "https://fr.milesrepublic.com/event/courses-nature-du-1er-mai-foissiat-5037",
+  "https://fr.milesrepublic.com/event/lepercienne-1799",
+  "https://fr.milesrepublic.com/event/ronde-des-3-moulins-1340",
+  "https://fr.milesrepublic.com/event/trail-so-bugey-1443",
+  "https://fr.milesrepublic.com/event/trail-thoiry-reculet-6725",
+  "https://fr.milesrepublic.com/event/trail-de-la-grande-montagne-6657",
+  "https://fr.milesrepublic.com/event/verticale-de-la-praille-6670",
+  "https://fr.milesrepublic.com/event/toussi-trail-3848",
+  "https://fr.milesrepublic.com/event/trail-des-roches-3877",
+  "https://fr.milesrepublic.com/event/corridatrail-ambarroise-6663",
+  "https://fr.milesrepublic.com/event/nocturne-de-la-praille-4197"
  ],
- "detail_errors": [],
  "new": 0,
  "updated": 0
 }
