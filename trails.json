@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "events": [
   {
    "id": "01-la-trace-des-maquisards",
@@ -2842,97 +2842,6 @@
    ],
    "chk": "2026-10-20",
    "src_url": "https://fr.milesrepublic.com/event/urban-trail-oyonnax-10162"
-  },
-  {
-   "id": "01-toussi-trail",
-   "dep": "01",
-   "n": "Toussi'trail",
-   "m": 10,
-   "iso": "2026-11-08",
-   "lieu": "Toussieux",
-   "date": "Dimanche 8 novembre 2026",
-   "url": "/event/toussi-trail-3848",
-   "lurl": null,
-   "src": "milesrepublic.com + site officiel",
-   "reg": {
-    "k": 0,
-    "t": "Aucune date d’inscription communiquée trouvée",
-    "c": 1
-   },
-   "r": [
-    [
-     "Trail 21 km",
-     21,
-     187,
-     0,
-     "09:00"
-    ],
-    [
-     "Trail 12 km",
-     12,
-     138,
-     0,
-     "09:00"
-    ],
-    [
-     "Trail 5 km",
-     5,
-     31,
-     0,
-     "09:30"
-    ]
-   ],
-   "chk": "2026-10-20",
-   "src_url": "https://fr.milesrepublic.com/event/toussi-trail-3848"
-  },
-  {
-   "id": "01-trail-des-roches",
-   "dep": "01",
-   "n": "Trail des roches",
-   "m": 10,
-   "iso": "2026-11-08",
-   "lieu": "Poncin",
-   "date": "Dimanche 8 novembre 2026",
-   "url": null,
-   "lurl": null,
-   "src": "milesrepublic.com + site officiel",
-   "reg": {
-    "k": 0,
-    "t": "Aucune date d’inscription communiquée trouvée",
-    "c": 1
-   },
-   "r": [
-    [
-     "Le relais",
-     32,
-     1200,
-     0,
-     "08:45"
-    ],
-    [
-     "Trail la poncinoise 32 km",
-     31,
-     1200,
-     0,
-     "08:45"
-    ],
-    [
-     "Trail des roches 21 km",
-     21,
-     650,
-     0,
-     "09:30"
-    ],
-    [
-     "Trail l'express poncinoise 10 km",
-     10,
-     250,
-     0,
-     "10:15"
-    ]
-   ],
-   "chk": "2026-10-20",
-   "src_url": "https://fr.milesrepublic.com/event/trail-des-roches-3877"
   },
   {
    "id": "01-corrida-trail-ambarroise",
