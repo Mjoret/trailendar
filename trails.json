@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "events": [
   {
    "id": "01-la-trace-des-maquisards",
@@ -2522,12 +2522,12 @@
    "iso": "2027-10-01",
    "lieu": "Léaz",
    "date": "Octobre 2027",
-   "url": "/event/defi-de-fort-l-ecluse-3656",
+   "url": null,
    "lurl": null,
    "src": "milesrepublic.com + site officiel",
    "reg": {
-    "k": 1,
-    "t": "Dates d'inscription pas encore communiquées.",
+    "k": 0,
+    "t": "Aucune date d’inscription communiquée trouvée",
     "c": 1
    },
    "r": [
@@ -2546,7 +2546,7 @@
      "09:45"
     ]
    ],
-   "chk": "2026-10-20",
+   "chk": "2026-11-19",
    "src_url": "https://fr.milesrepublic.com/event/defi-de-fort-l-ecluse-3656"
   },
   {
